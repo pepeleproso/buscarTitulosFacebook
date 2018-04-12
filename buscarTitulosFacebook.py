@@ -194,7 +194,7 @@ def getTituloFacebook(url):
 	
 def loadCsvIntoDataSet():
 	data_path = ''
-	csv = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data', 'buscarTitulosFacebook_clasificados_laNacion.csv'), header=0, sep=';', quotechar='\'', encoding = "utf-8" )
+	csv = pd.read_csv(os.path.join(os.path.dirname(__file__), 'data', 'posteos_input.csv'), header=0, sep=';', quotechar='\'', encoding = "utf-8" )
 	return csv.values
 
 def unshorten_url(url):
@@ -288,7 +288,7 @@ def addColumnaTituloFacebook():
 
 
 def saveInCsv(postsFinal):
-    fileName = 'buscarTitulosFacebook_clasificados_laNacion.csv'
+    fileName = 'posteos_output.csv'
     columns = ['tipo_post', 'post_id', 'post_link','link','link_domain', 'UrlCompleta','titulo_facebook']
     print(postsFinal)
     df = pd.DataFrame(data=postsFinal, columns=columns)
